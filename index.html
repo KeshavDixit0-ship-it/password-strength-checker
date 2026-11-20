@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureX | Password Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ANIMATED BACKGROUND -->
+<div class="bg-animation">
+    <div class="aurora a1"></div>
+    <div class="aurora a2"></div>
+    <div class="aurora a3"></div>
+    <div class="grid-floor"></div>
+    <div class="scan-line"></div>
+
+    <div class="particles">
+        <span style="--x:5%;  --s:4px; --d:14s; --delay:0s"></span>
+        <span style="--x:12%; --s:6px; --d:18s; --delay:2s"></span>
+        <span style="--x:19%; --s:3px; --d:12s; --delay:5s"></span>
+        <span style="--x:26%; --s:5px; --d:16s; --delay:1s"></span>
+        <span style="--x:33%; --s:4px; --d:20s; --delay:7s"></span>
+        <span style="--x:40%; --s:7px; --d:17s; --delay:3s"></span>
+        <span style="--x:47%; --s:3px; --d:13s; --delay:9s"></span>
+        <span style="--x:54%; --s:5px; --d:19s; --delay:4s"></span>
+        <span style="--x:61%; --s:4px; --d:15s; --delay:6s"></span>
+        <span style="--x:68%; --s:6px; --d:21s; --delay:0s"></span>
+        <span style="--x:75%; --s:3px; --d:12s; --delay:8s"></span>
+        <span style="--x:82%; --s:5px; --d:18s; --delay:2s"></span>
+        <span style="--x:89%; --s:4px; --d:16s; --delay:5s"></span>
+        <span style="--x:95%; --s:6px; --d:14s; --delay:1s"></span>
+        <span style="--x:9%;  --s:3px; --d:22s; --delay:10s"></span>
+        <span style="--x:37%; --s:5px; --d:15s; --delay:11s"></span>
+        <span style="--x:58%; --s:3px; --d:17s; --delay:12s"></span>
+        <span style="--x:72%; --s:6px; --d:20s; --delay:6s"></span>
+        <span style="--x:86%; --s:4px; --d:13s; --delay:9s"></span>
+        <span style="--x:23%; --s:4px; --d:19s; --delay:13s"></span>
+    </div>
+</div>
+
+<header class="navbar">
+    <div class="brand">
+        <span class="brand-icon">🔐</span>
+        <span>Secure<span class="blue">X</span></span>
+    </div>
+    <div class="nav-status">
+        <span class="live-dot"></span> SYSTEM ACTIVE
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <div class="tag">✦ ADVANCED SECURITY TOOL</div>
+        <h1>Password <span>Strength</span><br>Analyzer</h1>
+        <p>Check your password security and protect your digital identity.</p>
+    </section>
+
+    <section class="dashboard">
+
+        <div class="card-heading">
+            <div>
+                <h2>Security Dashboard</h2>
+                <p>Enter your password to analyze its strength</p>
+            </div>
+            <div class="shield">🛡️</div>
+        </div>
+
+        <form method="POST" action="/" autocomplete="off">
+            <label for="password">YOUR PASSWORD</label>
+
+            <div class="input-area">
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password..."
+                    required
+                    autocomplete="off"
+                >
+                <button type="button" class="show-btn" onclick="togglePassword()" aria-label="Show or hide password">SHOW</button>
+            </div>
+
+            <button type="submit" class="analyze-btn">
+                Analyze Password <span>→</span>
+            </button>
+        </form>
+
+        <div class="result-area" aria-live="polite">{{RESULT}}</div>
+
+        <div class="privacy">
+            <span>🔒</span>
+            Your password is checked locally and is never saved.
+        </div>
+
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <span>⚡</span>
+            <h3>Instant Analysis</h3>
+            <p>Get immediate security feedback.</p>
+        </div>
+        <div class="feature">
+            <span>🛡️</span>
+            <h3>Smart Protection</h3>
+            <p>Identify common password risks.</p>
+        </div>
+        <div class="feature">
+            <span>🔐</span>
+            <h3>Private &amp; Secure</h3>
+            <p>Your password is never stored.</p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    SECUREX © 2026 · PASSWORD SECURITY ANALYZER
+</footer>
+
+<script>
+function togglePassword() {
+    const input = document.getElementById("password");
+    const button = document.querySelector(".show-btn");
+
+    if (input.type === "password") {
+        input.type = "text";
+        button.textContent = "HIDE";
+    } else {
+        input.type = "password";
+        button.textContent = "SHOW";
+    }
+}
+</script>
+
+</body>
+</html>
